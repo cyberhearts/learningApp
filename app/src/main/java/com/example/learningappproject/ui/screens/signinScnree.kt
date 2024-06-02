@@ -76,9 +76,9 @@ fun SignipScreen() {
         }
     }
 
-    Box(contentAlignment = Alignment.BottomEnd, modifier = Modifier.fillMaxSize()) {
-        NavBar()
-    }
+//    Box(contentAlignment = Alignment.BottomEnd, modifier = Modifier.fillMaxSize()) {
+//        NavBar()
+//    }
 }
 
 @Preview(showBackground = true)

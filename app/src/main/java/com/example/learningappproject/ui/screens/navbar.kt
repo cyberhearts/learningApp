@@ -30,9 +30,10 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun NavBar() {
     Card(
+        modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(Color(0xff292b2d)),
         shape = RoundedCornerShape(50.dp),
-        modifier = Modifier.fillMaxWidth().padding(bottom = 10.dp, start = 15.dp, end = 15.dp)
+
     ){
         Row(Modifier.fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically,
