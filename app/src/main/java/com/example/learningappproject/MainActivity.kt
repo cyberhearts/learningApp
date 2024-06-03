@@ -10,6 +10,16 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.example.learningappproject.ui.screens.EnterScreen
+import com.example.learningappproject.ui.screens.PreEnterScreen
+import com.example.learningappproject.ui.screens.ProfileScreen
+import com.example.learningappproject.ui.screens.SignInScreen
+import com.example.learningappproject.ui.screens.SignUpScreen
+import com.example.learningappproject.ui.screens.SignipScreen
+import com.example.learningappproject.ui.screens.SignupScreen
 import com.example.learningappproject.ui.theme.LearningAppProjectTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,25 +32,24 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    val navController = rememberNavController()
+                    NavHost(navController = navController, startDestination = EnterScreen) {
+                        composable<EnterScreen> {
+                            PreEnterScreen(navController = navController)
+                        }
+                        composable<SignInScreen> { SignipScreen() }
+                        composable<SignUpScreen> { SignupScreen() }
+                    }
                 }
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     LearningAppProjectTheme {
-        Greeting("Android")
+
     }
 }

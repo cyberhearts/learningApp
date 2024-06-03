@@ -40,7 +40,6 @@ fun SignipScreen() {
                     withStyle(style = SpanStyle(color = Color.Blue)) {
                         append(" Создать аккаунт")
                     }
-
                 }
                 Text(text = str)
 
@@ -75,10 +74,6 @@ fun SignipScreen() {
             }
         }
     }
-
-//    Box(contentAlignment = Alignment.BottomEnd, modifier = Modifier.fillMaxSize()) {
-//        NavBar()
-//    }
 }
 
 @Preview(showBackground = true)

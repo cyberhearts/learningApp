@@ -31,18 +31,24 @@ fun ProfileScreen() {
             .padding(bottom = 10.dp, start = 15.dp, end = 15.dp, top = 20.dp)
     ) {
         Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
+            Modifier.fillMaxWidth()
         ) {
-            Text(text = "Профиль", fontSize = 40.sp)
-            Icon(
-                imageVector = Icons.Default.AccountCircle,
-                contentDescription = "",
-                modifier = Modifier.size(100.dp)
-            )
-            Row() {
-                Text(text = "никнейм", fontSize = 20.sp)
-                Icon(imageVector = Icons.Default.Edit, contentDescription = "")
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+            ) {
+                Text(text = "Профиль", fontSize = 40.sp)
+                Icon(
+                    imageVector = Icons.Default.AccountCircle,
+                    contentDescription = "",
+                    modifier = Modifier.size(100.dp)
+                )
+                Row() {
+                    Text(text = "никнейм", fontSize = 20.sp)
+                    Icon(imageVector = Icons.Default.Edit, contentDescription = "")
+                }
             }
+
             TextField(
                 value = "info about",
                 onValueChange = {},
@@ -51,10 +57,9 @@ fun ProfileScreen() {
                 singleLine = false
             )
 
-                Text(text = "Change password")
-
-            
+            Text(text = "Change password")
         }
+
 
 
         Box(contentAlignment = Alignment.BottomEnd, modifier = Modifier.fillMaxSize()) {

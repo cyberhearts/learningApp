@@ -16,12 +16,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun EnterScreen() {
+fun PreEnterScreen(navController : NavHostController) {
     Box(Modifier.fillMaxSize().padding(20.dp), contentAlignment = Alignment.CenterStart){
         Text(text = "Название приложения", fontSize = 50.sp)
-
         Box(
             contentAlignment = Alignment.BottomEnd,
             modifier = Modifier
@@ -33,14 +35,14 @@ fun EnterScreen() {
                     .fillMaxWidth()
                     ) {
                 Button(
-                    onClick = { /*TODO*/ },
+                    onClick = { navController.navigate(SignInScreen) },
                     colors = ButtonDefaults.buttonColors(Color(0xff292b2d)),
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Text(text = "Вход")
                 }
                 Button(
-                    onClick = { /*TODO*/ },
+                    onClick = { navController.navigate(SignUpScreen) },
                     colors = ButtonDefaults.buttonColors(Color.White),
                     border = BorderStroke(0.5.dp, Color(0xff292b2d)),
                     modifier = Modifier.fillMaxWidth()
@@ -52,9 +54,8 @@ fun EnterScreen() {
     }
 }
 
-
 @Preview(showBackground = true)
 @Composable
 private fun Preview() {
-    EnterScreen()
+    PreEnterScreen(navController = rememberNavController())
 }

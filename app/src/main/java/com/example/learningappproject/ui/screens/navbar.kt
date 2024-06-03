@@ -30,7 +30,7 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun NavBar() {
     Card(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier.fillMaxWidth(1f),
         colors = CardDefaults.cardColors(Color(0xff292b2d)),
         shape = RoundedCornerShape(50.dp),
 
