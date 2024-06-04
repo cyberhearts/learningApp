@@ -21,6 +21,8 @@ import com.example.learningappproject.ui.screens.SignUpScreen
 import com.example.learningappproject.ui.screens.SignipScreen
 import com.example.learningappproject.ui.screens.SignupScreen
 import com.example.learningappproject.ui.theme.LearningAppProjectTheme
+import com.example.learningappproject.ui.user.UserDetails
+import com.example.learningappproject.ui.user.UserUiState
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,7 +40,9 @@ class MainActivity : ComponentActivity() {
                             PreEnterScreen(navController = navController)
                         }
                         composable<SignInScreen> { SignipScreen() }
-                        composable<SignUpScreen> { SignupScreen() }
+                        composable<SignUpScreen> { SignupScreen(userUiState = UserUiState(
+                            UserDetails()
+                        ), onUserValueChange = {}, onSaveClick = {}) }
                     }
                 }
             }

@@ -10,5 +10,5 @@ data class User(
     val fullname: String,
     val email: String,
     val password: String,
-    val photo: String, // for future use
+    val photo: String? = null, // for future use
 )

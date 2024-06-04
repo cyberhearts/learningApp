@@ -14,9 +14,14 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.input.KeyboardType
@@ -24,9 +29,13 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.learningappproject.ui.data.Credentials
 
 @Composable
 fun SignipScreen() {
+
+    var credentials by remember { mutableStateOf(Credentials()) }
+    val context = LocalContext.current
     Box(modifier = Modifier
         .padding(20.dp)
         .fillMaxSize(),
@@ -42,7 +51,6 @@ fun SignipScreen() {
                     }
                 }
                 Text(text = str)
-
             }
             Column(
                 verticalArrangement = Arrangement.Top,
